@@ -13,7 +13,7 @@ async function getAllUsers() {
     // const specificUser = await User.findOne({ where: { name: "Dave" } });
 
     // Select a row by its primary key. Resolves with an object or undefined (if no matching rows exist)
-    const userByPk = await User.findByPk(3, { raw: true });
+    const userByPk = await User.findByPk(3);
 
     // A query using a numeric operator
     // const tallUsers = await User.findAll({
@@ -25,7 +25,7 @@ async function getAllUsers() {
     //   },
     // });
 
-    return tallUsers.dataValues;
+    return userByPk.dataValues;
   } catch (e) {
     console.log(e);
   }
